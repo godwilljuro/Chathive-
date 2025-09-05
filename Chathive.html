@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatHive</title>
+<style>
+body { font-family: Arial, sans-serif; padding: 20px; }
+h2 { color: #333; }
+button { padding: 10px 20px; margin: 5px; }
+#tic-tac-toe { display: grid; grid-template-columns: repeat(3, 100px); grid-gap: 5px; margin-top: 10px; }
+.cell { width: 100px; height: 100px; font-size: 2em; display: flex; justify-content: center; align-items: center; background: #eee; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<h2>Welcome to ChatHive</h2>
+<p>Chat, Video Call, and Play Games!</p>
+
+<div style="border:1px solid #ccc;padding:10px;margin-bottom:10px;">Chat placeholder (offline chat for testing)</div>
+<div style="border:1px solid #ccc;padding:10px;margin-bottom:10px;">Video Call placeholder (requires real connection)</div>
+
+<h3>Subscribe (₵15/month)</h3>
+<button onclick="payWithPaystack()">Pay with Paystack</button>
+<button onclick="payWithFlutterwave()">Pay with Flutterwave</button>
+
+<h3>Tic Tac Toe</h3>
+<div id="tic-tac-toe">
+  <div class="cell" onclick="makeMove(this)"></div>
+  <div class="cell" onclick="makeMove(this)"></div>
+  <div class="cell" onclick="makeMove(this)"></div>
+  <div class="cell" onclick="makeMove(this)"></div>
+  <div class="cell" onclick="makeMove(this)"></div>
+  <div class="cell" onclick="makeMove(this)"></div>
+  <div class="cell" onclick="makeMove(this)"></div>
+  <div class="cell" onclick="makeMove(this)"></div>
+  <div class="cell" onclick="makeMove(this)"></div>
+</div>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="https://checkout.flutterwave.com/v3.js"></script>
+
+<script>
+// Tic Tac Toe
+let turn = 'X';
+function makeMove(cell) {
+  if(cell.innerHTML === '') {
+    cell.innerHTML = turn;
+    turn = turn === 'X' ? 'O' : 'X';
+  }
+}
+
+// Payment placeholders
+function payWithPaystack() {
+  alert('Paystack payment placeholder (replace with your live keys and plan codes).');
+}
+function payWithFlutterwave() {
+  alert('Flutterwave payment placeholder (replace with your live keys and plan IDs).');
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatHive Admin</title>
+<style>
+body { font-family: Arial, sans-serif; padding: 20px; }
+input { padding: 5px; margin: 5px; }
+button { padding: 5px 10px; margin: 5px; }
+</style>
+</head>
+<body>
+<h2>Admin Login</h2>
+<form onsubmit="return login()">
+  Username: <input type="text" id="username"><br>
+  Password: <input type="password" id="password"><br>
+  <button type="submit">Login</button>
+</form>
+<script>
+function login() {
+  var user = document.getElementById('username').value;
+  var pass = document.getElementById('password').value;
+  if(user === 'Goodwill' && pass === 'godwillkofi2009agbodo13') {
+    alert('Login successful! Admin dashboard placeholder.');
+  } else {
+    alert('Incorrect credentials.');
+  }
+  return false;
+}
+</script>
+</body>
+</html>
+ChatHive Setup Guide
+
+1. Open GitHub and create a new repository (Public).
+2. Copy the contents of index.html and admin.html into the repository.
+3. Commit changes to the main branch.
+4. Go to Settings → Pages → Branch: main → root folder → Save.
+5. Your site URL will be: https://yourusername.github.io/repositoryname/
+6. Test demo user:
+   - Username: testuser
+   - Password: demo123
+7. Test admin login:
+   - Username: Goodwill
+   - Password: godwillkofi2009agbodo13
+8. Replace Paystack/Flutterwave placeholders in index.html with your live keys/plan IDs.
+9. Test payment buttons in demo mode first.
+10. Enjoy your ChatHive website!
